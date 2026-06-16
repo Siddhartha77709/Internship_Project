@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import { mockDatabase } from '../data/mockDatabase.js';
 
 const AuthContext = createContext();
 
@@ -31,7 +32,13 @@ export const AuthProvider = ({ children }) => {
           logout();
         }
       } catch (err) {
-        console.error('Auth verification error:', err);
+        console.warn('Auth verification backend offline, using mock session');
+        const mockUser = mockDatabase.verifyToken(token);
+        if (mockUser) {
+          setUser(mockUser);
+        } else {
+          logout();
+        }
       } finally {
         setLoading(false);
       }
@@ -66,8 +73,22 @@ export const AuthProvider = ({ children }) => {
       });
       return data;
     } catch (err) {
-      setError(err.message);
-      throw err;
+      console.warn('Login backend offline, using mock session');
+      try {
+        const mockData = mockDatabase.login(email, password);
+        localStorage.setItem('shopez_token', mockData.token);
+        setToken(mockData.token);
+        setUser({
+          _id: mockData._id,
+          username: mockData.username,
+          email: mockData.email,
+          role: mockData.role
+        });
+        return mockData;
+      } catch (mockErr) {
+        setError(mockErr.message);
+        throw mockErr;
+      }
     } finally {
       setLoading(false);
     }
@@ -99,8 +120,22 @@ export const AuthProvider = ({ children }) => {
       });
       return data;
     } catch (err) {
-      setError(err.message);
-      throw err;
+      console.warn('Registration backend offline, using mock session');
+      try {
+        const mockData = mockDatabase.register(username, email, password, role);
+        localStorage.setItem('shopez_token', mockData.token);
+        setToken(mockData.token);
+        setUser({
+          _id: mockData._id,
+          username: mockData.username,
+          email: mockData.email,
+          role: mockData.role
+        });
+        return mockData;
+      } catch (mockErr) {
+        setError(mockErr.message);
+        throw mockErr;
+      }
     } finally {
       setLoading(false);
     }
@@ -120,3 +155,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
+

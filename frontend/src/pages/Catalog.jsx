@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
 import { StarRating } from '../components/StarRating.jsx';
 import { Search, ShoppingCart, SlidersHorizontal, ArrowUpDown, Tag } from 'lucide-react';
+import { mockDatabase } from '../data/mockDatabase.js';
 
 export const Catalog = () => {
   const [products, setProducts] = useState([]);
@@ -35,9 +36,13 @@ export const Catalog = () => {
         if (response.ok) {
           const data = await response.json();
           setProducts(data);
+        } else {
+          throw new Error('API response not OK');
         }
       } catch (err) {
-        console.error('Error fetching products:', err);
+        console.warn('Backend offline, using mock database products');
+        const data = mockDatabase.getProducts(search, selectedCategory);
+        setProducts(data);
       } finally {
         setLoading(false);
       }

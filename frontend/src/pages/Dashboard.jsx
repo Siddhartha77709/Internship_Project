@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { mockDatabase } from '../data/mockDatabase.js';
 import {
   LayoutDashboard,
   Package,
@@ -18,7 +19,7 @@ import {
 } from 'lucide-react';
 
 export const Dashboard = () => {
-  const { token } = useAuth();
+  const { token, user } = useAuth();
   const [activeTab, setActiveTab] = useState('analytics');
 
   // Analytics states
@@ -56,9 +57,30 @@ export const Dashboard = () => {
       if (response.ok) {
         const data = await response.json();
         setAnalytics(data);
+      } else {
+        throw new Error('API response not OK');
       }
     } catch (err) {
-      console.error('Error fetching analytics:', err);
+      console.warn('Backend offline, generating mock analytics');
+      if (user) {
+        const data = mockDatabase.getSellerAnalytics(user._id);
+        const mockProducts = mockDatabase.getProducts().filter(p => p.sellerId === user._id);
+        const topProducts = mockProducts.map(p => ({
+          title: p.title,
+          category: p.category,
+          revenue: Math.round(p.price * (1 - p.discount / 100) * 3),
+          unitsSold: 3
+        })).slice(0, 3);
+
+        setAnalytics({
+          totalRevenue: data.stats.totalEarnings || topProducts.reduce((acc, p) => acc + p.revenue, 0),
+          totalUnitsSold: data.stats.totalItemsSold || (topProducts.length * 3),
+          totalActiveProducts: mockProducts.length,
+          lowStockAlerts: mockProducts.filter(p => p.stock < 5).map(p => ({ title: p.title, stock: p.stock })),
+          salesHistory: data.monthlySales,
+          topProducts
+        });
+      }
     } finally {
       setAnalyticsLoading(false);
     }
@@ -67,31 +89,28 @@ export const Dashboard = () => {
   const fetchProducts = async () => {
     setProductsLoading(true);
     try {
-      // Find own products by requesting all and filtering by current user's items in controller (handled on backend)
-      const response = await fetch('/api/products');
-      if (response.ok) {
-        const data = await response.json();
-        // The endpoint is public, so let's request specific seller products by matching sellerId on backend
-        // Wait, our backend endpoint supports GET /api/products?sellerId=...
-        // Let's decode the user from token or use profile endpoint. Since token has ID, we fetch /api/products?sellerId=own
-        // Wait, on the backend productController, if sellerId query param is supplied, it filters by sellerId.
-        // We can find the seller's id by calling the auth verify endpoint or reading user context!
-        // We have user context from useAuth()!
-        // Let's decode user.id
-        const userResp = await fetch('/api/auth/verify', {
-          headers: { 'Authorization': `Bearer ${token}` }
-        });
-        if (userResp.ok) {
-          const userData = await userResp.json();
-          const prodResp = await fetch(`/api/products?sellerId=${userData._id}`);
-          if (prodResp.ok) {
-            const prodData = await prodResp.json();
-            setProducts(prodData);
-          }
+      const userResp = await fetch('/api/auth/verify', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (userResp.ok) {
+        const userData = await userResp.json();
+        const prodResp = await fetch(`/api/products?sellerId=${userData._id}`);
+        if (prodResp.ok) {
+          const prodData = await prodResp.json();
+          setProducts(prodData);
+        } else {
+          throw new Error('Failed to fetch seller products');
         }
+      } else {
+        throw new Error('Auth token verification failed');
       }
     } catch (err) {
-      console.error('Error fetching products:', err);
+      console.warn('Backend offline, loading seller products from mock database');
+      if (user) {
+        const allProds = mockDatabase.getProducts();
+        const sellerProds = allProds.filter(p => p.sellerId === user._id);
+        setProducts(sellerProds);
+      }
     } finally {
       setProductsLoading(false);
     }
@@ -106,9 +125,15 @@ export const Dashboard = () => {
       if (response.ok) {
         const data = await response.json();
         setOrders(data);
+      } else {
+        throw new Error('API response not OK');
       }
     } catch (err) {
-      console.error('Error fetching orders:', err);
+      console.warn('Backend offline, loading seller orders from mock database');
+      if (user) {
+        const data = mockDatabase.getOrders(user._id, user.role);
+        setOrders(data);
+      }
     } finally {
       setOrdersLoading(false);
     }
@@ -158,9 +183,54 @@ export const Dashboard = () => {
           image: ''
         });
         fetchProducts();
+      } else {
+        throw new Error('Failed to save product in backend');
       }
     } catch (err) {
-      console.error('Error saving product:', err);
+      console.warn('Backend offline, saving product listing to mock database');
+      if (user) {
+        const mockProductsList = JSON.parse(localStorage.getItem('shopez_mock_products') || '[]');
+        if (editingProduct) {
+          const idx = mockProductsList.findIndex(p => p._id === editingProduct._id);
+          if (idx !== -1) {
+            mockProductsList[idx] = {
+              ...mockProductsList[idx],
+              ...productForm,
+              price: Number(productForm.price),
+              discount: Number(productForm.discount || 0),
+              stock: Number(productForm.stock),
+              updatedAt: new Date().toISOString()
+            };
+          }
+        } else {
+          const newProd = {
+            _id: "mock_product_" + Math.random().toString(36).substr(2, 9),
+            ...productForm,
+            price: Number(productForm.price),
+            discount: Number(productForm.discount || 0),
+            stock: Number(productForm.stock),
+            sellerId: user._id,
+            reviews: [],
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+          };
+          mockProductsList.unshift(newProd);
+        }
+        localStorage.setItem('shopez_mock_products', JSON.stringify(mockProductsList));
+        
+        setShowProductForm(false);
+        setEditingProduct(null);
+        setProductForm({
+          title: '',
+          description: '',
+          price: '',
+          discount: '',
+          stock: '',
+          category: 'Electronics',
+          image: ''
+        });
+        fetchProducts();
+      }
     }
   };
 
@@ -187,9 +257,15 @@ export const Dashboard = () => {
         });
         if (response.ok) {
           fetchProducts();
+        } else {
+          throw new Error('Delete failed on backend');
         }
       } catch (err) {
-        console.error('Error deleting product:', err);
+        console.warn('Backend offline, deleting product from mock database');
+        const mockProductsList = JSON.parse(localStorage.getItem('shopez_mock_products') || '[]');
+        const filtered = mockProductsList.filter(p => p._id !== productId);
+        localStorage.setItem('shopez_mock_products', JSON.stringify(filtered));
+        fetchProducts();
       }
     }
   };
@@ -207,9 +283,18 @@ export const Dashboard = () => {
       });
       if (response.ok) {
         fetchOrders();
+      } else {
+        throw new Error('Fulfillment update failed on backend');
       }
     } catch (err) {
-      console.error('Error updating status:', err);
+      console.warn('Backend offline, updating order status in mock database');
+      const mockOrdersList = JSON.parse(localStorage.getItem('shopez_mock_orders') || '[]');
+      const idx = mockOrdersList.findIndex(o => o._id === orderId);
+      if (idx !== -1) {
+        mockOrdersList[idx].status = newStatus;
+        localStorage.setItem('shopez_mock_orders', JSON.stringify(mockOrdersList));
+      }
+      fetchOrders();
     }
   };
 

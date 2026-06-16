@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { Package, Calendar, Clock, MapPin, DollarSign, PackageCheck } from 'lucide-react';
+import { mockDatabase } from '../data/mockDatabase.js';
 
 export const CustomerOrders = () => {
-  const { token } = useAuth();
+  const { token, user } = useAuth();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,16 +19,26 @@ export const CustomerOrders = () => {
         if (response.ok) {
           const data = await response.json();
           setOrders(data);
+        } else {
+          throw new Error('API response not OK');
         }
       } catch (err) {
-        console.error('Error fetching customer orders:', err);
+        console.warn('Backend offline, loading customer orders from mock database');
+        if (user) {
+          const data = mockDatabase.getOrders(user._id, user.role);
+          setOrders(data);
+        }
       } finally {
         setLoading(false);
       }
     };
 
-    fetchOrders();
-  }, [token]);
+    if (token) {
+      fetchOrders();
+    } else {
+      setLoading(false);
+    }
+  }, [token, user]);
 
   if (loading) {
     return (

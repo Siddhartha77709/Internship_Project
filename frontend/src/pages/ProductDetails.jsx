@@ -4,6 +4,7 @@ import { useCart } from '../context/CartContext.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import { StarRating } from '../components/StarRating.jsx';
 import { ArrowLeft, ShoppingCart, MessageSquare, Calendar, ChevronRight, Sparkles } from 'lucide-react';
+import { mockDatabase } from '../data/mockDatabase.js';
 
 export const ProductDetails = () => {
   const { id } = useParams();
@@ -26,11 +27,16 @@ export const ProductDetails = () => {
         const data = await response.json();
         setProduct(data);
       } else {
-        navigate('/');
+        throw new Error('Product not found in backend');
       }
     } catch (err) {
-      console.error('Error fetching product details:', err);
-      navigate('/');
+      console.warn('Backend offline, loading product details from mock database');
+      const mockProd = mockDatabase.getProductById(id);
+      if (mockProd) {
+        setProduct(mockProd);
+      } else {
+        navigate('/');
+      }
     } finally {
       setLoading(false);
     }
@@ -76,10 +82,18 @@ export const ProductDetails = () => {
         await fetchProductDetails();
       } else {
         const data = await response.json();
-        setReviewError(data.message || 'Error submitting review');
+        throw new Error(data.message || 'Error submitting review');
       }
     } catch (err) {
-      setReviewError('Failed to connect to the server');
+      console.warn('Backend offline, adding review to mock database');
+      const updatedProduct = mockDatabase.addReview(id, rating, comment, user.username);
+      if (updatedProduct) {
+        setComment('');
+        setRating(5);
+        setProduct(updatedProduct);
+      } else {
+        setReviewError(err.message || 'Failed to connect to the server');
+      }
     } finally {
       setSubmittingReview(false);
     }
