@@ -319,15 +319,15 @@ export const Catalog = () => {
                         {product.discount > 0 ? (
                           <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                              ${product.price}
+                              ₹{product.price}
                             </span>
                             <span style={{ color: '#fff', fontSize: '1.25rem', fontWeight: '800' }}>
-                              ${discountedPrice}
+                              ₹{discountedPrice}
                             </span>
                           </div>
                         ) : (
                           <span style={{ color: '#fff', fontSize: '1.25rem', fontWeight: '800' }}>
-                            ${product.price}
+                            ₹{product.price}
                           </span>
                         )}
                       </div>

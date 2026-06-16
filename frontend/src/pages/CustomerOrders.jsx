@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
-import { Package, Calendar, Clock, MapPin, DollarSign, PackageCheck } from 'lucide-react';
+import { Package, Calendar, Clock, MapPin, IndianRupee, PackageCheck } from 'lucide-react';
 import { mockDatabase } from '../data/mockDatabase.js';
 
 export const CustomerOrders = () => {
@@ -134,7 +134,7 @@ export const CustomerOrders = () => {
                           <strong style={{ color: '#fff' }}>{item.title}</strong>
                           <span style={{ color: 'var(--text-muted)', marginLeft: '8px' }}>x{item.quantity}</span>
                         </span>
-                        <span>${item.price * item.quantity}</span>
+                        <span>₹{item.price * item.quantity}</span>
                       </div>
                     ))}
                   </div>
@@ -169,7 +169,7 @@ export const CustomerOrders = () => {
                     display: 'flex',
                     alignItems: 'center'
                   }}>
-                    <DollarSign size={20} />
+                    <IndianRupee size={20} />
                     {order.totalAmount}
                   </div>
                 </div>

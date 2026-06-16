@@ -193,7 +193,7 @@ export const Checkout = () => {
                 {placedOrder.items.map((item, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
                     <span>{item.title} (x{item.quantity})</span>
-                    <strong style={{ color: '#fff' }}>${item.price * item.quantity}</strong>
+                    <strong style={{ color: '#fff' }}>₹{item.price * item.quantity}</strong>
                   </div>
                 ))}
               </div>
@@ -201,7 +201,7 @@ export const Checkout = () => {
 
             <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '12px', display: 'flex', justifyContent: 'space-between', fontSize: '1.05rem', fontWeight: '700' }}>
               <span>Total Paid:</span>
-              <span style={{ color: 'var(--primary-hover)' }}>${placedOrder.totalAmount}</span>
+              <span style={{ color: 'var(--primary-hover)' }}>₹{placedOrder.totalAmount}</span>
             </div>
           </div>
 
@@ -370,9 +370,9 @@ export const Checkout = () => {
                   <div style={{ color: '#fff', fontWeight: '600', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>
                     {item.title}
                   </div>
-                  <div style={{ color: 'var(--text-muted)' }}>x{item.quantity} at ${item.discountedPrice}</div>
+                  <div style={{ color: 'var(--text-muted)' }}>x{item.quantity} at ₹{item.discountedPrice}</div>
                 </div>
-                <strong style={{ fontSize: '0.9rem' }}>${item.discountedPrice * item.quantity}</strong>
+                <strong style={{ fontSize: '0.9rem' }}>₹{item.discountedPrice * item.quantity}</strong>
               </div>
             ))}
           </div>
@@ -389,13 +389,13 @@ export const Checkout = () => {
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-muted)' }}>
               <span>Subtotal</span>
-              <span>${originalTotal}</span>
+              <span>₹{originalTotal}</span>
             </div>
             
             {originalTotal > discountedTotal && (
               <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--success)', fontWeight: '600' }}>
                 <span>Savings</span>
-                <span>-${originalTotal - discountedTotal}</span>
+                <span>-₹{originalTotal - discountedTotal}</span>
               </div>
             )}
 
@@ -409,7 +409,7 @@ export const Checkout = () => {
               paddingTop: '16px'
             }}>
               <span>Total Price</span>
-              <span style={{ color: 'var(--primary-hover)' }}>${discountedTotal}</span>
+              <span style={{ color: 'var(--primary-hover)' }}>₹{discountedTotal}</span>
             </div>
           </div>
 

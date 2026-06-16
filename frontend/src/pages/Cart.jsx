@@ -92,15 +92,15 @@ export const Cart = () => {
                   {item.discount > 0 ? (
                     <>
                       <span style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--primary-hover)' }}>
-                        ${item.discountedPrice}
+                        ₹{item.discountedPrice}
                       </span>
                       <span style={{ fontSize: '0.85rem', textDecoration: 'line-through', color: 'var(--text-muted)' }}>
-                        ${item.price}
+                        ₹{item.price}
                       </span>
                     </>
                   ) : (
                     <span style={{ fontSize: '1.05rem', fontWeight: '700', color: '#fff' }}>
-                      ${item.price}
+                      ₹{item.price}
                     </span>
                   )}
                 </div>
@@ -149,11 +149,11 @@ export const Cart = () => {
               {/* Total Item Price */}
               <div style={{ minWidth: '80px', textAlign: 'right' }}>
                 <span style={{ display: 'block', fontSize: '1.15rem', fontWeight: '800', color: '#fff' }}>
-                  ${item.discountedPrice * item.quantity}
+                  ₹{item.discountedPrice * item.quantity}
                 </span>
                 {item.discount > 0 && (
                   <span style={{ fontSize: '0.75rem', color: 'var(--success)', fontWeight: '600' }}>
-                    Saved ${ (item.price - item.discountedPrice) * item.quantity }
+                    Saved ₹{ (item.price - item.discountedPrice) * item.quantity }
                   </span>
                 )}
               </div>
@@ -186,7 +186,7 @@ export const Cart = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-muted)' }}>
               <span>Subtotal</span>
-              <span>${originalTotal}</span>
+              <span>₹{originalTotal}</span>
             </div>
             
             {totalSavings > 0 && (
@@ -194,7 +194,7 @@ export const Cart = () => {
                 <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Tag size={14} /> ShopEZ Discounts
                 </span>
-                <span>-${totalSavings}</span>
+                <span>-₹{totalSavings}</span>
               </div>
             )}
 
@@ -213,7 +213,7 @@ export const Cart = () => {
               color: '#fff'
             }}>
               <span>Total</span>
-              <span>${discountedTotal}</span>
+              <span>₹{discountedTotal}</span>
             </div>
           </div>
 

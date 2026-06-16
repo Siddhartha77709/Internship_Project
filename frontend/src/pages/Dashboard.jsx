@@ -6,7 +6,7 @@ import {
   LayoutDashboard,
   Package,
   ListOrdered,
-  DollarSign,
+  IndianRupee,
   ShoppingBag,
   AlertTriangle,
   Plus,
@@ -397,11 +397,11 @@ export const Dashboard = () => {
               }}>
                 <div className="glass-panel" style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: '20px' }}>
                   <div style={{ background: 'rgba(6, 182, 212, 0.1)', padding: '16px', borderRadius: '12px', color: 'var(--secondary)' }}>
-                    <DollarSign size={28} />
+                    <IndianRupee size={28} />
                   </div>
                   <div>
                     <span style={{ color: 'var(--text-muted)', fontSize: '0.82rem', fontWeight: '500' }}>Total Revenue</span>
-                    <h2 style={{ fontSize: '1.75rem', fontWeight: '800', color: '#fff', marginTop: '2px' }}>${analytics.totalRevenue}</h2>
+                    <h2 style={{ fontSize: '1.75rem', fontWeight: '800', color: '#fff', marginTop: '2px' }}>₹{analytics.totalRevenue}</h2>
                   </div>
                 </div>
 
@@ -680,7 +680,7 @@ export const Dashboard = () => {
                       <td style={{ padding: '16px' }}>
                         <span className="badge badge-primary" style={{ padding: '4px 8px', fontSize: '0.75rem' }}>{p.category}</span>
                       </td>
-                      <td style={{ padding: '16px', color: '#fff', fontWeight: '600' }}>${p.price}</td>
+                      <td style={{ padding: '16px', color: '#fff', fontWeight: '600' }}>₹{p.price}</td>
                       <td style={{ padding: '16px', color: p.discount > 0 ? 'var(--success)' : 'var(--text-muted)' }}>
                         {p.discount > 0 ? `${p.discount}%` : '-'}
                       </td>
@@ -775,7 +775,7 @@ export const Dashboard = () => {
                         <div key={idx} style={{ display: 'flex', gap: '10px', fontSize: '0.88rem', margin: '4px 0' }}>
                           <span style={{ color: 'var(--secondary)', fontWeight: '600' }}>x{item.quantity}</span>
                           <span style={{ color: '#fff' }}>{item.title}</span>
-                          <span style={{ color: 'var(--text-muted)', marginLeft: 'auto' }}>${item.price * item.quantity}</span>
+                          <span style={{ color: 'var(--text-muted)', marginLeft: 'auto' }}>₹{item.price * item.quantity}</span>
                         </div>
                       ))}
                     </div>

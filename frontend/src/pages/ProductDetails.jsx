@@ -208,15 +208,15 @@ export const ProductDetails = () => {
             {product.discount > 0 ? (
               <>
                 <span style={{ fontSize: '2.2rem', fontWeight: '800', color: '#fff' }}>
-                  ${discountedPrice}
+                  ₹{discountedPrice}
                 </span>
                 <span style={{ fontSize: '1.3rem', textDecoration: 'line-through', color: 'var(--text-muted)' }}>
-                  ${product.price}
+                  ₹{product.price}
                 </span>
               </>
             ) : (
               <span style={{ fontSize: '2.2rem', fontWeight: '800', color: '#fff' }}>
-                ${product.price}
+                ₹{product.price}
               </span>
             )}
           </div>
