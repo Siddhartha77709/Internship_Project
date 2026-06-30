@@ -1,0 +1,46 @@
+Relevant log lines: line 49, line 52, line 54 and the resolved build config at lines 71-75.
+The build runs the command npm run build from the repository root (line 49), but there is no package.json at /opt/build/repo/package.json (line 52 and line 54). Netlify therefore exits with ENOENT.
+Cause
+
+Netlify is attempting to run npm in the repository root, but your project’s package.json (and build scripts) are not in the repo root or were not committed. The resolved config shows build.base = /opt/build/repo and publish = /opt/build/repo/dist (lines 71-75), so Netlify expects package.json at the root.
+Solution
+
+First verify package.json exists and is committed
+Locally, from your repo root run:
+ls -la
+# or show files in repo on branch main
+git ls-files | grep package.json || echo "no package.json tracked"
+If package.json is missing locally, create one or copy the correct one into the project root, then:
+git add package.json
+git commit -m "Add package.json"
+git push
+If package.json exists but in a subfolder (e.g., frontend/, client/, or similar), note that path.
+Fix Netlify build to run in the folder that contains package.json Choose one of the following approaches:
+Option A — Set the Netlify “Base directory” (recommended)
+
+In the Netlify UI, set the Base directory to the subfolder that contains package.json (for example "frontend" or "client"). Or update netlify.toml to set build.base to that subfolder. Example netlify.toml:
+[build]
+  base = "frontend"          # update to the folder that contains package.json
+  command = "npm run build"
+  publish = "frontend/dist"  # update to the real output folder
+Commit and push the change to netlify.toml (if you edit the file) or update the site settings in the Netlify UI.
+Option B — Run the build command from the correct subfolder
+
+Change build.command in netlify.toml (or in Netlify UI) to cd into the folder before running npm:
+[build]
+  command = "cd frontend && npm run build"
+  publish = "frontend/dist"
+(Replace frontend with your actual subfolder.)
+
+Option C — Move package.json to repository root
+
+If you prefer a root-level build, move or merge the package.json into the repo root and ensure the build script and output path match the resolved publish directory.
+Notes and verification
+
+After making the change, push to the branch Netlify builds and verify the next deploy. The key is that Netlify must run npm from the directory that contains package.json.
+If you need to change Node versions on Netlify, see Netlify docs: https://docs.netlify.com/configure-builds/manage-dependencies/#node-js-and-javascript
+References in your logs
+
+npm run build invoked: line 49
+npm cannot find package.json: line 52 and line 54
+resolved build config showing root-based paths: lines 71-75
