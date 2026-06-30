@@ -18,5 +18,15 @@
     "balance": 50000,
     "createdAt": "2026-06-30T13:03:26.777Z",
     "updatedAt": "2026-06-30T13:03:26.777Z"
+  },
+  {
+    "_id": "b4xezzjcsmr0of0ea",
+    "username": "test",
+    "email": "test@gmail.com",
+    "password": "$2a$10$dOTz/f3rjIDTb.wnUJ0mC.eEZrtok8EXSQz3FP5xXToY2XJwEJR42",
+    "role": "USER",
+    "balance": 50000,
+    "createdAt": "2026-06-30T13:22:24.322Z",
+    "updatedAt": "2026-06-30T13:22:24.322Z"
   }
 ]
