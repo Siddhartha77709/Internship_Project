@@ -1,11 +1,22 @@
 [
   {
-    "_id": "biqtufkhzmqfe168o",
-    "username": "ShopEZ Official",
-    "email": "seller@shopez.com",
-    "password": "$2a$10$Hqmae/PSga1xEJX80x5nXOJgeUcToz18/ebUTutJMCIeNX3vPzjjO",
-    "role": "seller",
-    "createdAt": "2026-06-15T15:48:32.856Z",
-    "updatedAt": "2026-06-15T15:48:32.857Z"
+    "_id": "7xvhz07a1mr0nqmlq",
+    "username": "ShopEZ Admin",
+    "email": "admin@shopez.com",
+    "password": "$2a$10$abEdIDAPz0YPoVFepid6..qtRG93Hivb/.1Ik1b60C.rmhk/zv2wi",
+    "role": "ADMIN",
+    "balance": 0,
+    "createdAt": "2026-06-30T13:03:26.702Z",
+    "updatedAt": "2026-06-30T13:03:26.703Z"
+  },
+  {
+    "_id": "pclfigpdqmr0nqmnt",
+    "username": "Demo Investor",
+    "email": "investor@shopez.com",
+    "password": "$2a$10$tV3oOSxLM4AUWE/bm9WMrudArXSr.V419jzDZfo33E7GI.ZN8wVem",
+    "role": "USER",
+    "balance": 50000,
+    "createdAt": "2026-06-30T13:03:26.777Z",
+    "updatedAt": "2026-06-30T13:03:26.777Z"
   }
 ]

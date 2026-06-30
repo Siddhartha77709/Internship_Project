@@ -16,34 +16,25 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
         return;
       }
-
       try {
         const response = await fetch('/api/auth/verify', {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
+          headers: { 'Authorization': `Bearer ${token}` }
         });
-
         if (response.ok) {
           const data = await response.json();
           setUser(data);
         } else {
-          // Token expired or invalid
           logout();
         }
       } catch (err) {
         console.warn('Auth verification backend offline, using mock session');
         const mockUser = mockDatabase.verifyToken(token);
-        if (mockUser) {
-          setUser(mockUser);
-        } else {
-          logout();
-        }
+        if (mockUser) setUser(mockUser);
+        else logout();
       } finally {
         setLoading(false);
       }
     };
-
     verifyUser();
   }, [token]);
 
@@ -56,21 +47,11 @@ export const AuthProvider = ({ children }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
-
       const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Login failed');
-      }
-
+      if (!response.ok) throw new Error(data.message || 'Login failed');
       localStorage.setItem('shopez_token', data.token);
       setToken(data.token);
-      setUser({
-        _id: data._id,
-        username: data.username,
-        email: data.email,
-        role: data.role
-      });
+      setUser({ _id: data._id, username: data.username, email: data.email, role: data.role, balance: data.balance });
       return data;
     } catch (err) {
       console.warn('Login backend offline, using mock session');
@@ -78,12 +59,7 @@ export const AuthProvider = ({ children }) => {
         const mockData = mockDatabase.login(email, password);
         localStorage.setItem('shopez_token', mockData.token);
         setToken(mockData.token);
-        setUser({
-          _id: mockData._id,
-          username: mockData.username,
-          email: mockData.email,
-          role: mockData.role
-        });
+        setUser({ _id: mockData._id, username: mockData.username, email: mockData.email, role: mockData.role, balance: mockData.balance });
         return mockData;
       } catch (mockErr) {
         setError(mockErr.message);
@@ -103,34 +79,19 @@ export const AuthProvider = ({ children }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password, role })
       });
-
       const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Registration failed');
-      }
-
+      if (!response.ok) throw new Error(data.message || 'Registration failed');
       localStorage.setItem('shopez_token', data.token);
       setToken(data.token);
-      setUser({
-        _id: data._id,
-        username: data.username,
-        email: data.email,
-        role: data.role
-      });
+      setUser({ _id: data._id, username: data.username, email: data.email, role: data.role, balance: data.balance });
       return data;
     } catch (err) {
-      console.warn('Registration backend offline, using mock session');
+      console.warn('Register backend offline, using mock session');
       try {
         const mockData = mockDatabase.register(username, email, password, role);
         localStorage.setItem('shopez_token', mockData.token);
         setToken(mockData.token);
-        setUser({
-          _id: mockData._id,
-          username: mockData.username,
-          email: mockData.email,
-          role: mockData.role
-        });
+        setUser({ _id: mockData._id, username: mockData.username, email: mockData.email, role: mockData.role, balance: mockData.balance });
         return mockData;
       } catch (mockErr) {
         setError(mockErr.message);
@@ -141,6 +102,20 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // Refresh balance from server (called after trades)
+  const refreshBalance = async () => {
+    if (!token) return;
+    try {
+      const response = await fetch('/api/auth/verify', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setUser(prev => prev ? { ...prev, balance: data.balance } : prev);
+      }
+    } catch (_) {}
+  };
+
   const logout = () => {
     localStorage.removeItem('shopez_token');
     setToken(null);
@@ -148,11 +123,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, error, login, register, logout, setError }}>
+    <AuthContext.Provider value={{ user, token, loading, error, login, register, logout, setError, refreshBalance }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export const useAuth = () => useContext(AuthContext);
-

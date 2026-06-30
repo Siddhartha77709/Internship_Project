@@ -1,0 +1,1 @@
+- [ShopEZ Trade architecture](shopez-trade-arch.md) — MERN stock trading platform converted from e-commerce; key design decisions for future work.

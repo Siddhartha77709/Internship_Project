@@ -2,12 +2,10 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
 
+const JWT_SECRET = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'shopez_super_secret_jwt_key_123456';
+
 const generateToken = (id, role) => {
-  return jwt.sign(
-    { id, role },
-    process.env.JWT_SECRET || 'shopez_super_secret_jwt_key_123456',
-    { expiresIn: '7d' }
-  );
+  return jwt.sign({ id, role }, JWT_SECRET, { expiresIn: '7d' });
 };
 
 export const registerUser = async (req, res) => {
@@ -18,22 +16,23 @@ export const registerUser = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    // Check if user already exists
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ message: 'User already exists with this email' });
     }
 
-    // Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // Create user
+    // Prevent self-registering as ADMIN
+    const assignedRole = role === 'ADMIN' ? 'USER' : (role || 'USER');
+
     const user = await User.create({
       username,
       email,
       password: hashedPassword,
-      role: role || 'customer'
+      role: assignedRole,
+      balance: 50000
     });
 
     const token = generateToken(user._id, user.role);
@@ -43,6 +42,7 @@ export const registerUser = async (req, res) => {
       username: user.username,
       email: user.email,
       role: user.role,
+      balance: user.balance,
       token
     });
   } catch (error) {
@@ -75,6 +75,7 @@ export const loginUser = async (req, res) => {
       username: user.username,
       email: user.email,
       role: user.role,
+      balance: user.balance,
       token
     });
   } catch (error) {
@@ -92,7 +93,8 @@ export const verifyToken = async (req, res) => {
       _id: user._id,
       username: user.username,
       email: user.email,
-      role: user.role
+      role: user.role,
+      balance: user.balance
     });
   } catch (error) {
     res.status(500).json({ message: 'Server error during verification', error: error.message });

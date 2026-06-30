@@ -8,8 +8,9 @@ export const requireAuth = (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
 
+  const jwtSecret = process.env.JWT_SECRET || process.env.SESSION_SECRET || 'shopez_super_secret_jwt_key_123456';
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'shopez_super_secret_jwt_key_123456');
+    const decoded = jwt.verify(token, jwtSecret);
     req.user = decoded; // Contains id and role
     next();
   } catch (err) {
@@ -17,19 +18,19 @@ export const requireAuth = (req, res, next) => {
   }
 };
 
-export const requireSeller = (req, res, next) => {
+export const requireAdmin = (req, res, next) => {
   requireAuth(req, res, () => {
-    if (req.user.role !== 'seller') {
-      return res.status(403).json({ message: 'Access forbidden. Seller account required.' });
+    if (req.user.role !== 'ADMIN') {
+      return res.status(403).json({ message: 'Access forbidden. Admin account required.' });
     }
     next();
   });
 };
 
-export const requireCustomer = (req, res, next) => {
+export const requireUser = (req, res, next) => {
   requireAuth(req, res, () => {
-    if (req.user.role !== 'customer') {
-      return res.status(403).json({ message: 'Access forbidden. Customer account required.' });
+    if (req.user.role !== 'USER') {
+      return res.status(403).json({ message: 'Access forbidden. Investor account required.' });
     }
     next();
   });

@@ -1,0 +1,1392 @@
+[
+  {
+    "_id": "2p0qfcwu7mr0nqmnu",
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "price": 213.32,
+    "previousClose": 210.15,
+    "high": 215.8,
+    "low": 209.4,
+    "volume": 54200000,
+    "marketCap": 3280,
+    "sector": "Technology",
+    "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. Known for the iPhone, Mac, iPad, Apple Watch, and a suite of software and services.",
+    "change": 3.17,
+    "changePercent": 1.51,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 193.25
+      },
+      {
+        "date": "2026-06-02",
+        "price": 192.05
+      },
+      {
+        "date": "2026-06-03",
+        "price": 192.89
+      },
+      {
+        "date": "2026-06-04",
+        "price": 192.91
+      },
+      {
+        "date": "2026-06-05",
+        "price": 194.89
+      },
+      {
+        "date": "2026-06-06",
+        "price": 192.8
+      },
+      {
+        "date": "2026-06-07",
+        "price": 194.79
+      },
+      {
+        "date": "2026-06-08",
+        "price": 192.67
+      },
+      {
+        "date": "2026-06-09",
+        "price": 192.42
+      },
+      {
+        "date": "2026-06-10",
+        "price": 192.37
+      },
+      {
+        "date": "2026-06-11",
+        "price": 194.77
+      },
+      {
+        "date": "2026-06-12",
+        "price": 191.67
+      },
+      {
+        "date": "2026-06-13",
+        "price": 192.12
+      },
+      {
+        "date": "2026-06-14",
+        "price": 194.61
+      },
+      {
+        "date": "2026-06-15",
+        "price": 192.53
+      },
+      {
+        "date": "2026-06-16",
+        "price": 193.8
+      },
+      {
+        "date": "2026-06-17",
+        "price": 190.86
+      },
+      {
+        "date": "2026-06-18",
+        "price": 188.01
+      },
+      {
+        "date": "2026-06-19",
+        "price": 187.52
+      },
+      {
+        "date": "2026-06-20",
+        "price": 184.22
+      },
+      {
+        "date": "2026-06-21",
+        "price": 185.43
+      },
+      {
+        "date": "2026-06-22",
+        "price": 182.41
+      },
+      {
+        "date": "2026-06-23",
+        "price": 184.84
+      },
+      {
+        "date": "2026-06-24",
+        "price": 184.72
+      },
+      {
+        "date": "2026-06-25",
+        "price": 182.46
+      },
+      {
+        "date": "2026-06-26",
+        "price": 184.2
+      },
+      {
+        "date": "2026-06-27",
+        "price": 183.73
+      },
+      {
+        "date": "2026-06-28",
+        "price": 186.62
+      },
+      {
+        "date": "2026-06-29",
+        "price": 188.58
+      },
+      {
+        "date": "2026-06-30",
+        "price": 213.32
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.778Z",
+    "updatedAt": "2026-06-30T13:03:26.778Z"
+  },
+  {
+    "_id": "5xxcw1h3emr0nqmnv",
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc.",
+    "price": 178.25,
+    "previousClose": 175.6,
+    "high": 180,
+    "low": 175.1,
+    "volume": 21300000,
+    "marketCap": 2200,
+    "sector": "Technology",
+    "description": "Alphabet Inc. is the parent company of Google. It operates through Google Services, Google Cloud, and Other Bets. Products include Search, YouTube, Android, Maps, Gmail, Chrome, and Google Cloud Platform.",
+    "change": 2.65,
+    "changePercent": 1.51,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 164.15
+      },
+      {
+        "date": "2026-06-02",
+        "price": 161.49
+      },
+      {
+        "date": "2026-06-03",
+        "price": 163.97
+      },
+      {
+        "date": "2026-06-04",
+        "price": 165.29
+      },
+      {
+        "date": "2026-06-05",
+        "price": 167.15
+      },
+      {
+        "date": "2026-06-06",
+        "price": 167.71
+      },
+      {
+        "date": "2026-06-07",
+        "price": 165.8
+      },
+      {
+        "date": "2026-06-08",
+        "price": 164.28
+      },
+      {
+        "date": "2026-06-09",
+        "price": 163.76
+      },
+      {
+        "date": "2026-06-10",
+        "price": 160.89
+      },
+      {
+        "date": "2026-06-11",
+        "price": 162.18
+      },
+      {
+        "date": "2026-06-12",
+        "price": 161.04
+      },
+      {
+        "date": "2026-06-13",
+        "price": 163.92
+      },
+      {
+        "date": "2026-06-14",
+        "price": 162.13
+      },
+      {
+        "date": "2026-06-15",
+        "price": 160
+      },
+      {
+        "date": "2026-06-16",
+        "price": 158.86
+      },
+      {
+        "date": "2026-06-17",
+        "price": 161.16
+      },
+      {
+        "date": "2026-06-18",
+        "price": 160.41
+      },
+      {
+        "date": "2026-06-19",
+        "price": 160.48
+      },
+      {
+        "date": "2026-06-20",
+        "price": 159.6
+      },
+      {
+        "date": "2026-06-21",
+        "price": 161.21
+      },
+      {
+        "date": "2026-06-22",
+        "price": 159.09
+      },
+      {
+        "date": "2026-06-23",
+        "price": 156.88
+      },
+      {
+        "date": "2026-06-24",
+        "price": 154.48
+      },
+      {
+        "date": "2026-06-25",
+        "price": 153.13
+      },
+      {
+        "date": "2026-06-26",
+        "price": 152.9
+      },
+      {
+        "date": "2026-06-27",
+        "price": 154.56
+      },
+      {
+        "date": "2026-06-28",
+        "price": 153.87
+      },
+      {
+        "date": "2026-06-29",
+        "price": 154.65
+      },
+      {
+        "date": "2026-06-30",
+        "price": 178.25
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.779Z",
+    "updatedAt": "2026-06-30T13:03:26.779Z"
+  },
+  {
+    "_id": "wjgdytcsmmr0nqmnx",
+    "symbol": "MSFT",
+    "name": "Microsoft Corp.",
+    "price": 422.9,
+    "previousClose": 418.3,
+    "high": 425.6,
+    "low": 417.5,
+    "volume": 18900000,
+    "marketCap": 3140,
+    "sector": "Technology",
+    "description": "Microsoft Corporation develops and supports software, services, devices, and solutions worldwide. Products include Windows, Azure cloud, Office 365, Xbox, LinkedIn, and GitHub.",
+    "change": 4.6,
+    "changePercent": 1.1,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 384.49
+      },
+      {
+        "date": "2026-06-02",
+        "price": 382.09
+      },
+      {
+        "date": "2026-06-03",
+        "price": 383.27
+      },
+      {
+        "date": "2026-06-04",
+        "price": 387.97
+      },
+      {
+        "date": "2026-06-05",
+        "price": 383.22
+      },
+      {
+        "date": "2026-06-06",
+        "price": 381.33
+      },
+      {
+        "date": "2026-06-07",
+        "price": 380.09
+      },
+      {
+        "date": "2026-06-08",
+        "price": 385.67
+      },
+      {
+        "date": "2026-06-09",
+        "price": 379.42
+      },
+      {
+        "date": "2026-06-10",
+        "price": 382.35
+      },
+      {
+        "date": "2026-06-11",
+        "price": 377.47
+      },
+      {
+        "date": "2026-06-12",
+        "price": 380.27
+      },
+      {
+        "date": "2026-06-13",
+        "price": 374.86
+      },
+      {
+        "date": "2026-06-14",
+        "price": 376.22
+      },
+      {
+        "date": "2026-06-15",
+        "price": 372.61
+      },
+      {
+        "date": "2026-06-16",
+        "price": 372.62
+      },
+      {
+        "date": "2026-06-17",
+        "price": 377.55
+      },
+      {
+        "date": "2026-06-18",
+        "price": 376.71
+      },
+      {
+        "date": "2026-06-19",
+        "price": 377.15
+      },
+      {
+        "date": "2026-06-20",
+        "price": 380.32
+      },
+      {
+        "date": "2026-06-21",
+        "price": 381.72
+      },
+      {
+        "date": "2026-06-22",
+        "price": 381.7
+      },
+      {
+        "date": "2026-06-23",
+        "price": 380.98
+      },
+      {
+        "date": "2026-06-24",
+        "price": 377.65
+      },
+      {
+        "date": "2026-06-25",
+        "price": 377.72
+      },
+      {
+        "date": "2026-06-26",
+        "price": 379.7
+      },
+      {
+        "date": "2026-06-27",
+        "price": 386.16
+      },
+      {
+        "date": "2026-06-28",
+        "price": 388.95
+      },
+      {
+        "date": "2026-06-29",
+        "price": 387.41
+      },
+      {
+        "date": "2026-06-30",
+        "price": 422.9
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.781Z",
+    "updatedAt": "2026-06-30T13:03:26.781Z"
+  },
+  {
+    "_id": "dds6m6dc7mr0nqmny",
+    "symbol": "AMZN",
+    "name": "Amazon.com Inc.",
+    "price": 189.75,
+    "previousClose": 186.4,
+    "high": 191.2,
+    "low": 185.8,
+    "volume": 36700000,
+    "marketCap": 1980,
+    "sector": "Consumer",
+    "description": "Amazon.com Inc. engages in retail and cloud services. AWS is the world's largest cloud platform. It also operates e-commerce, Prime Video, Alexa, Kindle, and advertising services.",
+    "change": 3.35,
+    "changePercent": 1.8,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 174.12
+      },
+      {
+        "date": "2026-06-02",
+        "price": 174.77
+      },
+      {
+        "date": "2026-06-03",
+        "price": 175.28
+      },
+      {
+        "date": "2026-06-04",
+        "price": 178.12
+      },
+      {
+        "date": "2026-06-05",
+        "price": 176.38
+      },
+      {
+        "date": "2026-06-06",
+        "price": 175.81
+      },
+      {
+        "date": "2026-06-07",
+        "price": 173.01
+      },
+      {
+        "date": "2026-06-08",
+        "price": 174.79
+      },
+      {
+        "date": "2026-06-09",
+        "price": 173.04
+      },
+      {
+        "date": "2026-06-10",
+        "price": 171.22
+      },
+      {
+        "date": "2026-06-11",
+        "price": 170.62
+      },
+      {
+        "date": "2026-06-12",
+        "price": 168.28
+      },
+      {
+        "date": "2026-06-13",
+        "price": 166.89
+      },
+      {
+        "date": "2026-06-14",
+        "price": 168.51
+      },
+      {
+        "date": "2026-06-15",
+        "price": 170.56
+      },
+      {
+        "date": "2026-06-16",
+        "price": 172.81
+      },
+      {
+        "date": "2026-06-17",
+        "price": 171.7
+      },
+      {
+        "date": "2026-06-18",
+        "price": 170.47
+      },
+      {
+        "date": "2026-06-19",
+        "price": 169.43
+      },
+      {
+        "date": "2026-06-20",
+        "price": 167.63
+      },
+      {
+        "date": "2026-06-21",
+        "price": 167.19
+      },
+      {
+        "date": "2026-06-22",
+        "price": 167.67
+      },
+      {
+        "date": "2026-06-23",
+        "price": 167.58
+      },
+      {
+        "date": "2026-06-24",
+        "price": 166.4
+      },
+      {
+        "date": "2026-06-25",
+        "price": 165.37
+      },
+      {
+        "date": "2026-06-26",
+        "price": 164.63
+      },
+      {
+        "date": "2026-06-27",
+        "price": 165.6
+      },
+      {
+        "date": "2026-06-28",
+        "price": 166.43
+      },
+      {
+        "date": "2026-06-29",
+        "price": 166.09
+      },
+      {
+        "date": "2026-06-30",
+        "price": 189.75
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.782Z",
+    "updatedAt": "2026-06-30T13:03:26.782Z"
+  },
+  {
+    "_id": "1cccw973lmr0nqmnz",
+    "symbol": "TSLA",
+    "name": "Tesla Inc.",
+    "price": 248.1,
+    "previousClose": 241.8,
+    "high": 252.4,
+    "low": 240.5,
+    "volume": 89500000,
+    "marketCap": 790,
+    "sector": "Automotive",
+    "description": "Tesla Inc. designs, develops, manufactures, leases, and sells electric vehicles, energy generation and storage systems. Products include Model S, 3, X, Y, Cybertruck, Powerwall, and Solar Roof.",
+    "change": 6.3,
+    "changePercent": 2.61,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 229.14
+      },
+      {
+        "date": "2026-06-02",
+        "price": 236.33
+      },
+      {
+        "date": "2026-06-03",
+        "price": 242.01
+      },
+      {
+        "date": "2026-06-04",
+        "price": 246.14
+      },
+      {
+        "date": "2026-06-05",
+        "price": 254.7
+      },
+      {
+        "date": "2026-06-06",
+        "price": 255.33
+      },
+      {
+        "date": "2026-06-07",
+        "price": 259.15
+      },
+      {
+        "date": "2026-06-08",
+        "price": 257.5
+      },
+      {
+        "date": "2026-06-09",
+        "price": 259.8
+      },
+      {
+        "date": "2026-06-10",
+        "price": 255.05
+      },
+      {
+        "date": "2026-06-11",
+        "price": 261.24
+      },
+      {
+        "date": "2026-06-12",
+        "price": 269.59
+      },
+      {
+        "date": "2026-06-13",
+        "price": 264.53
+      },
+      {
+        "date": "2026-06-14",
+        "price": 267.79
+      },
+      {
+        "date": "2026-06-15",
+        "price": 258.51
+      },
+      {
+        "date": "2026-06-16",
+        "price": 254.49
+      },
+      {
+        "date": "2026-06-17",
+        "price": 252.6
+      },
+      {
+        "date": "2026-06-18",
+        "price": 251.06
+      },
+      {
+        "date": "2026-06-19",
+        "price": 257.79
+      },
+      {
+        "date": "2026-06-20",
+        "price": 263.25
+      },
+      {
+        "date": "2026-06-21",
+        "price": 259.01
+      },
+      {
+        "date": "2026-06-22",
+        "price": 252.75
+      },
+      {
+        "date": "2026-06-23",
+        "price": 248.74
+      },
+      {
+        "date": "2026-06-24",
+        "price": 255.89
+      },
+      {
+        "date": "2026-06-25",
+        "price": 252.38
+      },
+      {
+        "date": "2026-06-26",
+        "price": 257.84
+      },
+      {
+        "date": "2026-06-27",
+        "price": 259.37
+      },
+      {
+        "date": "2026-06-28",
+        "price": 258.39
+      },
+      {
+        "date": "2026-06-29",
+        "price": 266.77
+      },
+      {
+        "date": "2026-06-30",
+        "price": 248.1
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.783Z",
+    "updatedAt": "2026-06-30T13:03:26.783Z"
+  },
+  {
+    "_id": "e2nn3zg71mr0nqmo0",
+    "symbol": "NVDA",
+    "name": "NVIDIA Corp.",
+    "price": 128.3,
+    "previousClose": 124.9,
+    "high": 130.8,
+    "low": 124.2,
+    "volume": 310000000,
+    "marketCap": 3150,
+    "sector": "Semiconductors",
+    "description": "NVIDIA Corporation is a computing infrastructure company. It designs graphics processing units (GPUs) for gaming, professional visualization, data centers, and automotive markets. Powers the AI revolution.",
+    "change": 3.4,
+    "changePercent": 2.72,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 116.94
+      },
+      {
+        "date": "2026-06-02",
+        "price": 116.6
+      },
+      {
+        "date": "2026-06-03",
+        "price": 114.62
+      },
+      {
+        "date": "2026-06-04",
+        "price": 113.75
+      },
+      {
+        "date": "2026-06-05",
+        "price": 112.11
+      },
+      {
+        "date": "2026-06-06",
+        "price": 111.52
+      },
+      {
+        "date": "2026-06-07",
+        "price": 111.63
+      },
+      {
+        "date": "2026-06-08",
+        "price": 112.77
+      },
+      {
+        "date": "2026-06-09",
+        "price": 112
+      },
+      {
+        "date": "2026-06-10",
+        "price": 113.91
+      },
+      {
+        "date": "2026-06-11",
+        "price": 114.68
+      },
+      {
+        "date": "2026-06-12",
+        "price": 116.1
+      },
+      {
+        "date": "2026-06-13",
+        "price": 114.6
+      },
+      {
+        "date": "2026-06-14",
+        "price": 113.98
+      },
+      {
+        "date": "2026-06-15",
+        "price": 114.12
+      },
+      {
+        "date": "2026-06-16",
+        "price": 115.41
+      },
+      {
+        "date": "2026-06-17",
+        "price": 116.45
+      },
+      {
+        "date": "2026-06-18",
+        "price": 116.02
+      },
+      {
+        "date": "2026-06-19",
+        "price": 117.92
+      },
+      {
+        "date": "2026-06-20",
+        "price": 117.37
+      },
+      {
+        "date": "2026-06-21",
+        "price": 118.79
+      },
+      {
+        "date": "2026-06-22",
+        "price": 119.9
+      },
+      {
+        "date": "2026-06-23",
+        "price": 118.49
+      },
+      {
+        "date": "2026-06-24",
+        "price": 118.27
+      },
+      {
+        "date": "2026-06-25",
+        "price": 119.5
+      },
+      {
+        "date": "2026-06-26",
+        "price": 118.72
+      },
+      {
+        "date": "2026-06-27",
+        "price": 119.43
+      },
+      {
+        "date": "2026-06-28",
+        "price": 120.99
+      },
+      {
+        "date": "2026-06-29",
+        "price": 119.63
+      },
+      {
+        "date": "2026-06-30",
+        "price": 128.3
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.784Z",
+    "updatedAt": "2026-06-30T13:03:26.784Z"
+  },
+  {
+    "_id": "4t9l28l2emr0nqmo0",
+    "symbol": "META",
+    "name": "Meta Platforms Inc.",
+    "price": 549.6,
+    "previousClose": 540.2,
+    "high": 554.3,
+    "low": 539.1,
+    "volume": 14200000,
+    "marketCap": 1390,
+    "sector": "Technology",
+    "description": "Meta Platforms builds apps and technologies that help people connect. Products include Facebook, Instagram, WhatsApp, Messenger, Quest VR headsets, and the Horizon metaverse platform.",
+    "change": 9.4,
+    "changePercent": 1.74,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 499.82
+      },
+      {
+        "date": "2026-06-02",
+        "price": 492.98
+      },
+      {
+        "date": "2026-06-03",
+        "price": 499.29
+      },
+      {
+        "date": "2026-06-04",
+        "price": 507.84
+      },
+      {
+        "date": "2026-06-05",
+        "price": 509.85
+      },
+      {
+        "date": "2026-06-06",
+        "price": 504.46
+      },
+      {
+        "date": "2026-06-07",
+        "price": 499.53
+      },
+      {
+        "date": "2026-06-08",
+        "price": 491.56
+      },
+      {
+        "date": "2026-06-09",
+        "price": 487.15
+      },
+      {
+        "date": "2026-06-10",
+        "price": 479.15
+      },
+      {
+        "date": "2026-06-11",
+        "price": 479.67
+      },
+      {
+        "date": "2026-06-12",
+        "price": 478.91
+      },
+      {
+        "date": "2026-06-13",
+        "price": 482.43
+      },
+      {
+        "date": "2026-06-14",
+        "price": 490.17
+      },
+      {
+        "date": "2026-06-15",
+        "price": 497.19
+      },
+      {
+        "date": "2026-06-16",
+        "price": 502.93
+      },
+      {
+        "date": "2026-06-17",
+        "price": 496.91
+      },
+      {
+        "date": "2026-06-18",
+        "price": 492.07
+      },
+      {
+        "date": "2026-06-19",
+        "price": 486.75
+      },
+      {
+        "date": "2026-06-20",
+        "price": 492.21
+      },
+      {
+        "date": "2026-06-21",
+        "price": 498.83
+      },
+      {
+        "date": "2026-06-22",
+        "price": 490.59
+      },
+      {
+        "date": "2026-06-23",
+        "price": 488.56
+      },
+      {
+        "date": "2026-06-24",
+        "price": 480.3
+      },
+      {
+        "date": "2026-06-25",
+        "price": 483.25
+      },
+      {
+        "date": "2026-06-26",
+        "price": 490.36
+      },
+      {
+        "date": "2026-06-27",
+        "price": 485.97
+      },
+      {
+        "date": "2026-06-28",
+        "price": 480.51
+      },
+      {
+        "date": "2026-06-29",
+        "price": 481.88
+      },
+      {
+        "date": "2026-06-30",
+        "price": 549.6
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.784Z",
+    "updatedAt": "2026-06-30T13:03:26.784Z"
+  },
+  {
+    "_id": "0jicfz527mr0nqmo2",
+    "symbol": "NFLX",
+    "name": "Netflix Inc.",
+    "price": 718.45,
+    "previousClose": 710.3,
+    "high": 724.6,
+    "low": 708.2,
+    "volume": 4800000,
+    "marketCap": 308,
+    "sector": "Entertainment",
+    "description": "Netflix Inc. provides entertainment services globally. Offers TV series, films, and games across various genres. It has over 260 million paid memberships in 190+ countries.",
+    "change": 8.15,
+    "changePercent": 1.15,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 654.3
+      },
+      {
+        "date": "2026-06-02",
+        "price": 656.78
+      },
+      {
+        "date": "2026-06-03",
+        "price": 652.8
+      },
+      {
+        "date": "2026-06-04",
+        "price": 658.07
+      },
+      {
+        "date": "2026-06-05",
+        "price": 649.74
+      },
+      {
+        "date": "2026-06-06",
+        "price": 659.37
+      },
+      {
+        "date": "2026-06-07",
+        "price": 652.03
+      },
+      {
+        "date": "2026-06-08",
+        "price": 642.88
+      },
+      {
+        "date": "2026-06-09",
+        "price": 633.56
+      },
+      {
+        "date": "2026-06-10",
+        "price": 639.24
+      },
+      {
+        "date": "2026-06-11",
+        "price": 640.14
+      },
+      {
+        "date": "2026-06-12",
+        "price": 643.16
+      },
+      {
+        "date": "2026-06-13",
+        "price": 653.93
+      },
+      {
+        "date": "2026-06-14",
+        "price": 644.22
+      },
+      {
+        "date": "2026-06-15",
+        "price": 646.97
+      },
+      {
+        "date": "2026-06-16",
+        "price": 643.71
+      },
+      {
+        "date": "2026-06-17",
+        "price": 633.54
+      },
+      {
+        "date": "2026-06-18",
+        "price": 641.25
+      },
+      {
+        "date": "2026-06-19",
+        "price": 630.42
+      },
+      {
+        "date": "2026-06-20",
+        "price": 631.64
+      },
+      {
+        "date": "2026-06-21",
+        "price": 639.21
+      },
+      {
+        "date": "2026-06-22",
+        "price": 630.53
+      },
+      {
+        "date": "2026-06-23",
+        "price": 627.14
+      },
+      {
+        "date": "2026-06-24",
+        "price": 619.87
+      },
+      {
+        "date": "2026-06-25",
+        "price": 610.49
+      },
+      {
+        "date": "2026-06-26",
+        "price": 619.38
+      },
+      {
+        "date": "2026-06-27",
+        "price": 614.7
+      },
+      {
+        "date": "2026-06-28",
+        "price": 615.92
+      },
+      {
+        "date": "2026-06-29",
+        "price": 617.82
+      },
+      {
+        "date": "2026-06-30",
+        "price": 718.45
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.786Z",
+    "updatedAt": "2026-06-30T13:03:26.786Z"
+  },
+  {
+    "_id": "ny8l9z79kmr0nqmo3",
+    "symbol": "AMD",
+    "name": "Advanced Micro Devices",
+    "price": 162.8,
+    "previousClose": 158.4,
+    "high": 165.2,
+    "low": 157.9,
+    "volume": 52000000,
+    "marketCap": 263,
+    "sector": "Semiconductors",
+    "description": "AMD designs microprocessors, motherboard chipsets, embedded processors, and GPUs for computers, game consoles, and data centers. Competes with Intel and NVIDIA in CPU and GPU markets.",
+    "change": 4.4,
+    "changePercent": 2.78,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 147.84
+      },
+      {
+        "date": "2026-06-02",
+        "price": 146.16
+      },
+      {
+        "date": "2026-06-03",
+        "price": 147.35
+      },
+      {
+        "date": "2026-06-04",
+        "price": 145.4
+      },
+      {
+        "date": "2026-06-05",
+        "price": 147.31
+      },
+      {
+        "date": "2026-06-06",
+        "price": 145.14
+      },
+      {
+        "date": "2026-06-07",
+        "price": 145.28
+      },
+      {
+        "date": "2026-06-08",
+        "price": 143.56
+      },
+      {
+        "date": "2026-06-09",
+        "price": 145.43
+      },
+      {
+        "date": "2026-06-10",
+        "price": 143.23
+      },
+      {
+        "date": "2026-06-11",
+        "price": 143.32
+      },
+      {
+        "date": "2026-06-12",
+        "price": 143.74
+      },
+      {
+        "date": "2026-06-13",
+        "price": 144.16
+      },
+      {
+        "date": "2026-06-14",
+        "price": 146.42
+      },
+      {
+        "date": "2026-06-15",
+        "price": 148.98
+      },
+      {
+        "date": "2026-06-16",
+        "price": 149.14
+      },
+      {
+        "date": "2026-06-17",
+        "price": 151.27
+      },
+      {
+        "date": "2026-06-18",
+        "price": 150.56
+      },
+      {
+        "date": "2026-06-19",
+        "price": 152
+      },
+      {
+        "date": "2026-06-20",
+        "price": 151.26
+      },
+      {
+        "date": "2026-06-21",
+        "price": 153.45
+      },
+      {
+        "date": "2026-06-22",
+        "price": 153.82
+      },
+      {
+        "date": "2026-06-23",
+        "price": 154.26
+      },
+      {
+        "date": "2026-06-24",
+        "price": 154.63
+      },
+      {
+        "date": "2026-06-25",
+        "price": 156.2
+      },
+      {
+        "date": "2026-06-26",
+        "price": 155.85
+      },
+      {
+        "date": "2026-06-27",
+        "price": 157.96
+      },
+      {
+        "date": "2026-06-28",
+        "price": 156.33
+      },
+      {
+        "date": "2026-06-29",
+        "price": 155.15
+      },
+      {
+        "date": "2026-06-30",
+        "price": 162.8
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.787Z",
+    "updatedAt": "2026-06-30T13:03:26.787Z"
+  },
+  {
+    "_id": "huqrts97dmr0nqmo4",
+    "symbol": "INTC",
+    "name": "Intel Corp.",
+    "price": 20.75,
+    "previousClose": 20.2,
+    "high": 21.1,
+    "low": 20.05,
+    "volume": 45000000,
+    "marketCap": 88,
+    "sector": "Semiconductors",
+    "description": "Intel Corporation designs and manufactures microprocessors and related chipsets for PCs, servers, and embedded systems. It is transforming into a foundry services provider while advancing AI chip technology.",
+    "change": 0.55,
+    "changePercent": 2.72,
+    "historicalData": [
+      {
+        "date": "2026-06-01",
+        "price": 19.14
+      },
+      {
+        "date": "2026-06-02",
+        "price": 19.01
+      },
+      {
+        "date": "2026-06-03",
+        "price": 19.32
+      },
+      {
+        "date": "2026-06-04",
+        "price": 19.48
+      },
+      {
+        "date": "2026-06-05",
+        "price": 19.64
+      },
+      {
+        "date": "2026-06-06",
+        "price": 19.56
+      },
+      {
+        "date": "2026-06-07",
+        "price": 19.47
+      },
+      {
+        "date": "2026-06-08",
+        "price": 19.66
+      },
+      {
+        "date": "2026-06-09",
+        "price": 19.78
+      },
+      {
+        "date": "2026-06-10",
+        "price": 19.9
+      },
+      {
+        "date": "2026-06-11",
+        "price": 19.78
+      },
+      {
+        "date": "2026-06-12",
+        "price": 19.85
+      },
+      {
+        "date": "2026-06-13",
+        "price": 20.18
+      },
+      {
+        "date": "2026-06-14",
+        "price": 20.16
+      },
+      {
+        "date": "2026-06-15",
+        "price": 20.27
+      },
+      {
+        "date": "2026-06-16",
+        "price": 20.62
+      },
+      {
+        "date": "2026-06-17",
+        "price": 20.27
+      },
+      {
+        "date": "2026-06-18",
+        "price": 20.34
+      },
+      {
+        "date": "2026-06-19",
+        "price": 20.03
+      },
+      {
+        "date": "2026-06-20",
+        "price": 20.16
+      },
+      {
+        "date": "2026-06-21",
+        "price": 19.84
+      },
+      {
+        "date": "2026-06-22",
+        "price": 19.86
+      },
+      {
+        "date": "2026-06-23",
+        "price": 19.63
+      },
+      {
+        "date": "2026-06-24",
+        "price": 19.44
+      },
+      {
+        "date": "2026-06-25",
+        "price": 19.56
+      },
+      {
+        "date": "2026-06-26",
+        "price": 19.72
+      },
+      {
+        "date": "2026-06-27",
+        "price": 19.87
+      },
+      {
+        "date": "2026-06-28",
+        "price": 20.05
+      },
+      {
+        "date": "2026-06-29",
+        "price": 19.71
+      },
+      {
+        "date": "2026-06-30",
+        "price": 20.75
+      }
+    ],
+    "createdAt": "2026-06-30T13:03:26.788Z",
+    "updatedAt": "2026-06-30T13:03:26.788Z"
+  }
+]
